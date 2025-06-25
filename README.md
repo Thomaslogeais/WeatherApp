@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# 🌤️ Météo App React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Une application météo moderne et responsive développée avec React et TypeScript, utilisant l'API OpenWeatherMap.
 
-## Available Scripts
+## ✨ Fonctionnalités
 
-In the project directory, you can run:
+- 🔍 **Recherche de villes** : Recherchez la météo de n'importe quelle ville dans le monde
+- 🌡️ **Météo actuelle** : Température, description, ressenti, humidité, vent et pression
+- 📅 **Prévisions 5 jours** : Prévisions météorologiques détaillées
+- ⭐ **Favoris** : Sauvegardez vos villes préférées pour un accès rapide
+- 📱 **Design responsive** : Interface adaptée à tous les écrans
+- 🎨 **Interface moderne** : Design élégant avec animations fluides
+- 💾 **Stockage local** : Vos favoris sont sauvegardés localement
 
-### `npm start`
+## 🚀 Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prérequis
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (version 14 ou supérieure)
+- npm ou yarn
+- Une clé API OpenWeatherMap (gratuite)
 
-### `npm test`
+### Étapes d'installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clonez le projet**
+   ```bash
+   git clone <url-du-repo>
+   cd weather-app-react
+   ```
 
-### `npm run build`
+2. **Installez les dépendances**
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Configurez votre clé API**
+   
+   a. Créez un compte gratuit sur [OpenWeatherMap](https://openweathermap.org/api)
+   
+   b. Obtenez votre clé API gratuite
+   
+   c. Copiez le fichier `.env.example` vers `.env`
+   ```bash
+   cp .env.example .env
+   ```
+   
+   d. Ouvrez le fichier `.env` et remplacez `YOUR_API_KEY_HERE` par votre vraie clé API :
+   ```
+   REACT_APP_OPENWEATHER_API_KEY=votre_cle_api_ici
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Démarrez l'application**
+   ```bash
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+L'application sera accessible sur [http://localhost:3000](http://localhost:3000)
 
-### `npm run eject`
+## 🛠️ Scripts disponibles
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `npm start` : Démarre l'application en mode développement
+- `npm run build` : Compile l'application pour la production
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📁 Structure du projet
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+src/
+├── components/          # Composants React
+│   ├── FavoritesList.tsx
+│   ├── ForecastCard.tsx
+│   ├── SearchBar.tsx
+│   └── WeatherCard.tsx
+├── hooks/              # Hooks personnalisés
+│   └── useLocalStorage.ts
+├── services/           # Services API
+│   └── weatherService.ts
+├── styles/             # Fichiers CSS
+│   └── App.css
+├── types/              # Types TypeScript
+│   └── weather.ts
+├── App.tsx             # Composant principal
+└── index.tsx           # Point d'entrée
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🎯 Utilisation
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Recherche** : Tapez le nom d'une ville dans la barre de recherche et appuyez sur Entrée
+2. **Favoris** : Cliquez sur l'étoile pour ajouter/retirer une ville des favoris
+3. **Navigation** : Cliquez sur une ville favorite pour afficher sa météo
+4. **Prévisions** : Les prévisions 5 jours s'affichent automatiquement sous la météo actuelle
