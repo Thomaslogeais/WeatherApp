@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar';
 import WeatherCard from './components/WeatherCard';
 import ForecastCard from './components/ForecastCard';
 import FavoritesList from './components/FavoritesList';
+import ChatBox from './components/ChatBox';
 import { weatherService } from './services/weatherService';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { WeatherData, ForecastDay, FavoriteCity } from './types/weather';
@@ -125,6 +126,9 @@ function App() {
           </div>
         </main>
       </div>
+      
+      {/* Chatbot IA météo */}
+      <ChatBox weather={weather} forecast={forecast} />
     </div>
   );
 }
